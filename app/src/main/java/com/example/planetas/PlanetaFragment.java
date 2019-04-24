@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class PlanetaFragment extends Fragment {
@@ -32,7 +34,46 @@ public class PlanetaFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ImageView imageView = view.findViewById(R.id.imagenPlaneta);
-        imageView.setImageDrawable(getResources().getDrawable(R.drawable.mercury));
+        String nombrePlaneta = this.getArguments().getString("tipoPlaneta");
+        Toast.makeText(this.getContext(), nombrePlaneta, Toast.LENGTH_LONG).show();
+
+        pintaPlaneta(nombrePlaneta);
+
+    }
+
+    public void pintaPlaneta(String nombrePlaneta) {
+       ImageView imagenPlaneta = getView().findViewById(R.id.imagenPlaneta);
+        TextView nombreDePlaneta = getView().findViewById(R.id.nombrePlaneta);
+        nombreDePlaneta.setText(nombrePlaneta);
+       switch (nombrePlaneta){
+           case "Tierra":
+               imagenPlaneta.setImageResource(R.drawable.earth);
+
+               break;
+           case "Mercurio":
+               imagenPlaneta.setImageResource(R.drawable.mercury);
+               break;
+           case "Venus":
+               imagenPlaneta.setImageResource(R.drawable.venus);
+               break;
+           case "Jupiter":
+               imagenPlaneta.setImageResource(R.drawable.jupiter);
+               break;
+           case "Saturno":
+               imagenPlaneta.setImageResource(R.drawable.saturn);
+               break;
+           case "Urano":
+               imagenPlaneta.setImageResource(R.drawable.uranus);
+               break;
+           case "Marte":
+               imagenPlaneta.setImageResource(R.drawable.mars);
+               break;
+           case "Pluton":
+               imagenPlaneta.setImageResource(R.drawable.pluton);
+               break;
+           case "Neptuno":
+               imagenPlaneta.setImageResource(R.drawable.neptune);
+               break;
+       }
     }
 }

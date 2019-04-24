@@ -83,27 +83,42 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
         int id = item.getItemId();
         PlanetaFragment planetaFragment = new PlanetaFragment();
+        Bundle tipoPlaneta = new Bundle();
+
         if (id == R.id.earth) {
-            planetaFragment = new PlanetaFragment();
+
+            tipoPlaneta.putString("tipoPlaneta", "Tierra");
+            planetaFragment.setArguments(tipoPlaneta);
 
         } else if (id == R.id.jupiter) {
-            planetaFragment = new PlanetaFragment();
+
+            tipoPlaneta.putString("tipoPlaneta", "Jupiter");
+            planetaFragment.setArguments(tipoPlaneta);
+
         } else if (id == R.id.mars) {
-
+            tipoPlaneta.putString("tipoPlaneta", "Marte");
+            planetaFragment.setArguments(tipoPlaneta);
         } else if (id == R.id.mercury) {
-
+            tipoPlaneta.putString("tipoPlaneta", "Mercurio");
+            planetaFragment.setArguments(tipoPlaneta);
         } else if (id == R.id.neptune) {
-
+            tipoPlaneta.putString("tipoPlaneta", "Neptuno");
+            planetaFragment.setArguments(tipoPlaneta);
         } else if (id == R.id.pluton) {
-
+            tipoPlaneta.putString("tipoPlaneta", "Pluton");
+            planetaFragment.setArguments(tipoPlaneta);
         } else if (id == R.id.saturn) {
-
+            tipoPlaneta.putString("tipoPlaneta", "Saturno");
+            planetaFragment.setArguments(tipoPlaneta);
         } else if (id == R.id.uranus) {
-
+            tipoPlaneta.putString("tipoPlaneta", "Urano");
+            planetaFragment.setArguments(tipoPlaneta);
         } else if (id == R.id.venus) {
-
+            tipoPlaneta.putString("tipoPlaneta", "Venus");
+            planetaFragment.setArguments(tipoPlaneta);
         }
 
         if(planetaFragment != null){
